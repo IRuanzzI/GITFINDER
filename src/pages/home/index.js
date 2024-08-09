@@ -1,9 +1,8 @@
 import { useState } from "react";
-
 import { Header } from "../../components/Header";
-import backgroundgitimage from "../../assets/backgroundgitimage.png"
+import backgroundgitimage from "../../assets/backgroundgitimage.png";
 import React from 'react';
-import ItemList from '../../components/itemList'
+import ItemList from '../../components/itemList';
 import './style.css';
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
     const newUser = await userData.json();
 
     if (newUser.name) {
-      const { avatar_url, name, bio, login } = newUser
+      const { avatar_url, name, bio, login } = newUser;
       setCurrentUser({ avatar_url, name, bio, login });
 
       const reposData = await fetch(`https://api.github.com/users/${user}/repos`);
@@ -37,37 +36,35 @@ function App() {
         <div className="info">
           <div>
             <input name="usuario"
-
               placeholder="@username"
               value={user}
               onChange={event => setUser(event.target.value)}
-
             />
             <button onClick={handleGetData}>Buscar</button>
           </div>
 
-          {currentUser?.name ? ( <>
-            <div className="perfil">
-            <img src={currentUser.avatar_url} className="profile" alt="profile"></img>
-            <div>
-              <h3>{currentUser.name}</h3>
-              <span>@{currentUser.login}</span>
-              <p>{currentUser.bio}</p>
-            </div>
-          </div>
-          <hr />
-          </>
-          ): null}
-          
+          {currentUser?.name ? (
+            <>
+              <div className="perfil">
+                <img src={currentUser.avatar_url} className="profile" alt="profile" />
+                <div>
+                  <h3>{currentUser.name}</h3>
+                  <span>@{currentUser.login}</span>
+                  <p>{currentUser.bio}</p>
+                </div>
+              </div>
+              <hr />
+            </>
+          ) : null}
+
           {repos?.length ? (
             <div>
-            <h4>Repositorios</h4>
+              <h4>Repositorios</h4>
               {repos.map(repo => (
-                <ItemList title={repo.name} description={repo.description} />    
+                <ItemList key={repo.id} title={repo.name} description={repo.description} />
               ))}
-          </div>
-          ):null}
-
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

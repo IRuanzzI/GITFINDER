@@ -1,36 +1,35 @@
-/* Estilos padrões */
-
-/* Utilize um reset CSS como o Normalize.css para uma melhor padronização de estilos */
-/* Normalize.css: https://necolas.github.io/normalize.css/ */
-
-body {
-    background-color: #1D2128;
-    font-family: 'Inter', 'Roboto', 'Arial'; /* Define a fonte padrão do corpo */
+*{
+    margin: 0;
+    padding: 0;
 }
 
-hr {
-    background-color: rgba(229, 229, 229, 0.2);
-    border: 1px solid rgba(229, 229, 229, 0.2);
+body{
+    background-color: #1D2128 ;
 }
 
-h1 {
+hr{
+    background-color: rgba(229, 229,229, 0.2);
+    border: 1px solid rgba(229, 229,229, 0.2);
+}
+
+h1{
+    font-family: 'Inter , Roboto, Arial'; 
     font-size: 24px;
     color: #FFF;
-}
+}   
 
-/* Media Query para dispositivos com largura máxima de 600px */
-
-@media (max-width: 600px) {
+/* Media Query para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
     body {
-        padding: 0 10px; /* Adiciona um pouco de padding nas laterais para dispositivos móveis */
+        background-color: #1D2128; 
     }
 
     hr {
-        margin: 10px 0; /* Adiciona margem para separar os elementos */
+        background-color: rgba(229, 229, 229, 0.2); 
+        border: 1px solid rgba(229, 229, 229, 0.2); 
     }
 
     h1 {
-        font-size: 20px; /* Reduz o tamanho da fonte do título para telas menores */
-        text-align: center; /* Centraliza o texto do título */
+        font-size: 20px; 
     }
 }

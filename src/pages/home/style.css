@@ -1,7 +1,6 @@
-/* Estilos padrões */
-
 .conteudo {
     position: relative;
+
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
@@ -11,19 +10,20 @@
     height: 100vh;
     position: absolute;
     left: 0;
+    z-index: -1;
 }
 
-.info {
+.info{
     width: 60%;
     margin-right: 90px;
     margin-top: 40px;
     color: #fff;
 }
 
-input {
+input{
     border: 1px solid #999999;
     border-radius: 22px;
-    color: #fff;
+    color:#fff;
     min-width: 250px;
     width: 85%;
     margin-right: 12px;
@@ -32,22 +32,22 @@ input {
     padding: 10px;
 }
 
-button {
+button{
     border: 1px solid #999999;
     border-radius: 22px;
-    color: #fff;
+    color: #fff;   
     margin-right: 12px;
     background: #203338;
     font-size: 18px;
     padding: 10px;
 }
 
-.perfil {
+.perfil{
     display: flex;
     margin: 40px 0;
 }
 
-.profile {
+.profile{
     width: 120px;
     height: 120px;
     border-radius: 60px;
@@ -55,32 +55,36 @@ button {
     margin-right: 32px;
 }
 
-.perfil h3 {
+.perfil h3{
     color: #999999;
     font-size: 24px;
     margin: 0;
 }
 
-.perfil span {
+.perfil span{
     display: block;
     color: #999999;
     font-size: 12px;
     margin: 0;
 }
 
-.perfil p {
+.perfil p{
     color: #999999;
     font-size: 12px;
     margin: 20px 0;
 }
 
-/* Media Query para dispositivos com largura máxima de 600px */
-
-@media (max-width: 600px) {
+/* Media Query para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
     .conteudo {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .background {
+        height: 100vh; 
+        background-position: absolute;/* Reduz a altura da imagem de fundo para dispositivos menores */
     }
 
     .info {
@@ -89,36 +93,34 @@ button {
         margin-top: 20px;
     }
 
-    input, button {
-        min-width: 100%; /* Ajuste para um tamanho adequado em telas menores */
-        width: 100%; /* Faz com que o input e o botão ocupem toda a largura disponível */
-        font-size: 16px; /* Reduz o tamanho da fonte para melhor ajuste em dispositivos menores */
-        padding: 8px; /* Ajusta o padding para um tamanho mais apropriado */
+    input {
+        width: 100%;
+
+        margin-right: 4.5px;
+        padding: 5px;
     }
 
-    button{
+    button {
+        width: 100%;
         margin-top: 10px;
-        background: #203338;
+        margin-left: 4.5px;
+        padding: 8px;
     }
 
     .perfil {
         flex-direction: column;
         align-items: center;
-        margin: 20px 0; /* Reduz a margem vertical para ajustar o layout em telas pequenas */
+        margin: 20px 0;
     }
 
     .profile {
         width: 100px;
         height: 100px;
         margin-right: 0;
-        margin-bottom: 20px;
     }
 
-    .perfil h3 {
-        font-size: 20px;
-    }
-
-    .perfil span, .perfil p {
-        font-size: 10px;
+    .perfil h3, .perfil span, .perfil p {
+        text-align: center;
     }
 }
+
